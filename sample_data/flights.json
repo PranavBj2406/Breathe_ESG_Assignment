@@ -1,0 +1,42 @@
+[
+  {
+    "ExpenseReportID": "EXP-2025-004412",
+    "EmployeeID": "E08912",
+    "CostCenter": "CC-BER-01",
+    "TravelType": "FLIGHT",
+    "TripDate": "2025-02-15",
+    "Origin": "BER",
+    "Destination": "LHR",
+    "DistanceKm": 932.00,
+    "Amount": 245.00,
+    "Currency": "EUR",
+    "BookingClass": "ECONOMY"
+  },
+  {
+    "ExpenseReportID": "EXP-2025-004413",
+    "EmployeeID": "E08913",
+    "CostCenter": "CC-BER-01",
+    "TravelType": "FLIGHT",
+    "TripDate": "2025-02-20",
+    "Origin": "BER",
+    "Destination": "JFK",
+    "DistanceKm": null,
+    "Amount": 850.00,
+    "Currency": "EUR",
+    "BookingClass": "BUSINESS"
+  },
+  {
+    "ExpenseReportID": "EXP-2025-004414",
+    "EmployeeID": "E08914",
+    "CostCenter": "CC-MUC-02",
+    "TravelType": "HOTEL",
+    "TripDate": "2025-03-01",
+    "Origin": null,
+    "Destination": null,
+    "DistanceKm": null,
+    "Amount": 420.00,
+    "Currency": "EUR",
+    "BookingClass": null,
+    "NumberOfNights": 3
+  }
+]

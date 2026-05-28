@@ -1,0 +1,35 @@
+# Core Backend
+Django==4.2.14
+djangorestframework==3.15.1
+django-cors-headers==4.4.0
+django-filter==24.2
+
+# Database
+psycopg2-binary==2.9.9
+
+# Environment Variables
+python-dotenv==1.0.1
+
+# HTTP/API Calls
+requests==2.32.3
+
+# Data Processing
+pandas==2.2.2
+numpy==2.0.0
+
+# File Parsing
+openpyxl==3.1.5
+python-dateutil==2.9.0.post0
+
+# Authentication
+djangorestframework-simplejwt==5.3.1
+
+# Deployment
+gunicorn==22.0.0
+whitenoise==6.7.0
+
+# Dev & Testing
+ipython==8.26.0
+black==24.8.0
+django-extensions==3.2.3
+pytest-django==4.8.0
