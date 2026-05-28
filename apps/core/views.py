@@ -5,9 +5,18 @@ from django.contrib.auth.models import User
 from apps.core.models import Tenant, LocationMapping
 
 
-@api_view(["POST"])
+@api_view(["GET", "POST"])
 @permission_classes([AllowAny])
 def quick_setup(request):
+    if request.method == "GET":
+        tenant = Tenant.objects.first()
+        if tenant:
+            return Response({
+                "tenant_id": str(tenant.id),
+                "tenant_name": tenant.name,
+                "setup_complete": User.objects.filter(username="admin").exists()
+            })
+        return Response({"message": "No tenant found"}, status=404)
     """One-time setup — creates admin user and seed data."""
     
     # Only run if no users exist
