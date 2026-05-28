@@ -1,0 +1,37 @@
+services:
+  - type: web
+    name: breathe-esg-api
+    runtime: python
+    plan: free
+    buildCommand: |
+      pip install -r requirements.txt
+      python manage.py collectstatic --noinput
+      python manage.py migrate
+    startCommand: gunicorn breathe_esg.wsgi:application --bind 0.0.0.0:$PORT --workers 4
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: DJANGO_SETTINGS_MODULE
+        value: breathe_esg.settings.production
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: breathe-esg-db
+          property: connectionString
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: ".onrender.com"
+      - key: CORS_ALLOWED_ORIGINS
+        value: "https://your-frontend-url.vercel.app,http://localhost:3000"
+      - key: ACCESS_TOKEN_LIFETIME_MINUTES
+        value: "60"
+      - key: REFRESH_TOKEN_LIFETIME_DAYS
+        value: "7"
+
+databases:
+  - name: breathe-esg-db
+    plan: free
+    databaseName: breathe_esg
+    user: breathe_esg
