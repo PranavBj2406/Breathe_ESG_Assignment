@@ -16,4 +16,7 @@ urlpatterns = [
     # App APIs
     path("api/ingestion/", include("apps.ingestion.urls")),
     path("api/activities/", include("apps.activities.urls")),
+
+    
+    path("api/setup/", include("apps.core.urls")),
 ]
